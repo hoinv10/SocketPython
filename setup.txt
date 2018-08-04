@@ -1,0 +1,19 @@
+v2. Set default python version
+gedit ~/.bashrc
+add to first line: alias python='/usr/bin/python3'
+source ~/.bashrc
+install module asio: https://aiohttp.readthedocs.io/en/stable/
+
+3. snap7
+Ubuntu
+If you are using Ubuntu you can use the Ubuntu packages from our launchpad PPA. To install:
+
+$ sudo add-apt-repository ppa:gijzelaar/snap7
+$ sudo apt-get update
+$ sudo apt-get install libsnap71 libsnap7-dev
+
+python-snap7 is available on PyPI. You can install it by using pip:
+
+$ pip install python-snap7
+
+tut: http://python-snap7.readthedocs.io/en/latest/client.html
