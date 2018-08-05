@@ -20,12 +20,18 @@ async def login_cookie(session, url):
         cookie = loaded_json['data']
     return cookie
 
-
-async def main():
+async def login():
     url = 'http://103.1.209.157:8686/auth'
+    ur1_shakehand = 'http://103.1.209.157:8686/socket.io/?transport=polling&t=L-2Y25W'
     async with aiohttp.ClientSession() as session:
         cookie = await login_cookie(session, url)
         print ("Cookie = " , cookie)
+        html = await fetch(session,ur1_shakehand)
+        print ("html = ",html)
+
+async def main():
+    await login()
+
 
 loop = asyncio.get_event_loop()
 loop.run_until_complete(main())
