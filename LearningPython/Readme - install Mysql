@@ -1,0 +1,21 @@
+1. install
+    sudo apt-get update
+    sudo apt-get install mysql-server
+2. Allow remote access
+    sudo apt-get install ufw
+    sudo ufw allow mysql
+3. Start the MySQL service
+    sudo systemctl start mysql
+4.  Launch at reboot
+    sudo systemctl enable mysql
+5. Start the mysql shell
+    /usr/bin/mysql -u root -p
+6. install python3 mysql
+    //pip install PyMySQL
+    sudo pip3 install mysql-connector-python
+    sudo pip3 install mysql-dev
+    sudo pip3 install mysql
+
+VAI CAU LENH CO BAN:
+SHOW DATABASES;
+CREAT DATABASE SINHVIEN;
