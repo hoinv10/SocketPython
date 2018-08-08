@@ -16,9 +16,11 @@ async def login_cookie(session, url):
     }
     async with session.post(url,data=login_data) as resp:
         respon = await resp.text()
+        print ("response =", resp)
         loaded_json = json.loads(respon,encoding='UTF-8')
-        cookie = loaded_json['data']
-    return cookie
+        print (loaded_json)
+        token = loaded_json['data']
+    return token
 
 async def login():
     url = 'http://103.1.209.157:8686/auth'
@@ -28,7 +30,10 @@ async def login():
         print ("Cookie = " , cookie)
         html = await fetch(session,ur1_shakehand)
         print ("html = ",html)
-
+#b1: get => laysid
+#b2: authenticate: => post (url = url + sid =...) , (data co chua cai token) => tra ve ok hoac khong
+#b3: get => trong header cua cai get co ,... upgradtto socket... => duoc cai ket noi
+#b4: ping pong 
 async def main():
     await login()
 
